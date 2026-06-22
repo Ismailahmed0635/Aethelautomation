@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base Reset ─── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9f6f1;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* ─── Neo-Brutal Utility Classes ─── */
+@layer components {
+  .neo-card {
+    @apply bg-white border-3 border-aethel-black rounded-2xl shadow-brutal
+      transition-all duration-200;
+  }
+
+  .neo-card-hover:hover {
+    @apply shadow-brutal-hover;
+    transform: translate(3px, 3px);
+  }
+
+  .neo-card-lift:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0px #1a1a1a;
+  }
+
+  .neo-btn {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5
+      font-heading font-bold text-base
+      border-3 border-aethel-black rounded-xl shadow-brutal
+      transition-all duration-150 select-none;
+  }
+
+  .neo-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px #1a1a1a;
+  }
+
+  .neo-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px #1a1a1a;
+  }
+
+  .neo-btn-primary {
+    @apply neo-btn bg-aethel-orange text-white;
+  }
+
+  .neo-btn-secondary {
+    @apply neo-btn bg-white text-aethel-black;
+  }
+
+  .neo-btn-ghost {
+    @apply neo-btn bg-transparent text-aethel-black border-transparent shadow-none;
+  }
+
+  .neo-btn-ghost:hover {
+    @apply bg-aethel-warm-gray;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .neo-badge {
+    @apply inline-flex items-center gap-1.5 px-4 py-1.5
+      font-heading font-bold text-sm
+      border-3 border-aethel-black rounded-full shadow-brutal-sm
+      bg-white;
+  }
+
+  .neo-input {
+    @apply w-full px-5 py-3.5 font-body text-base
+      border-3 border-aethel-black rounded-xl
+      bg-white placeholder:text-gray-400
+      outline-none transition-all duration-150;
+  }
+
+  .neo-input:focus {
+    box-shadow: 4px 4px 0px #e8711a;
+  }
+
+  .section-heading {
+    @apply font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl
+      text-aethel-black leading-tight;
+  }
+
+  .section-subheading {
+    @apply font-body text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed;
+  }
+}
+
+/* ─── Scrollbar Styling ─── */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f6f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8711a;
+  border-radius: 5px;
+  border: 2px solid #f9f6f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c45e10;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: #e8711a;
+  color: #ffffff;
+}
